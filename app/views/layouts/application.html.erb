@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <h1><%= link_to "Stethoscope", root_path %></h1>
+    <%= form_tag root_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Doctor" %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
