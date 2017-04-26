@@ -7,7 +7,7 @@ class Doctor < ApplicationRecord
   end
 
   def self.redundant
-    # group all doctors by keys that are common
+    # group all doctors by keys that are common - group_by returns hash
     grouped = Doctor.all.group_by {|doctor| [doctor.last_name, doctor.bio]}
     # loop over the model's values
     grouped.values.each do |duplicates|
