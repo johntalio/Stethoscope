@@ -1,0 +1,11 @@
+<% if !@doctors.blank? %>
+  <% @doctors.each do |doctor| %>
+  <ul>
+    <li><%= doctor.first_name %> <%= doctor.last_name %>, <%= doctor.title %>
+  </ul>
+  <% end %>
+<% end %>
+
+<% if @doctors.blank? %>
+  <h4>There are no doctors containing the term <%= params[:search] %>.</h4>
+<% end %>
