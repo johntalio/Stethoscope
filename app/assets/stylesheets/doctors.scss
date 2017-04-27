@@ -1,3 +1,34 @@
 // Place all the styles related to the Doctors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.site-name {
+  display: inline;
+  font-weight: bolder;
+  font-size: 3em;
+}
+
+.search-bar {
+  display: inline;
+  position: absolute;
+  padding-top: 25px;
+  padding-left: 20px;
+}
+
+.doc-list {
+  padding-top: 30px;
+  width: 50%;
+}
+
+.each-doc {
+  padding-left: 50px; 
+}
+
+.search-alert {
+  text-align: center;
+  font-weight: bolder;
+}
