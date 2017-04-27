@@ -1,4 +1,8 @@
 <p><%= image_tag @doctor.image_url %></p>
 <p><%= @doctor.first_name %> <%= @doctor.last_name %></p>
 <p><%= @doctor.title %></p>
-<p><%= @doctor.bio %></p>
+<% if @doctor.bio.empty? %>
+  <p> This doctor did not provide a bio. </p>
+<% else %>
+  <p><%= @doctor.bio %></p>
+<% end %>
