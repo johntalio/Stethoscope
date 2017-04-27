@@ -1,13 +1,17 @@
 <% if !@doctors.blank? %>
-  <% @doctors.each do |doctor| %>
-  <ul>
-    <li><%= doctor.first_name %> <%= doctor.last_name %>, <%= doctor.title %>
+  <div class='doc-list'>
+    <% @doctors.each do |doctor| %>
+    <p class='each-doc'>
+      <%= doctor.first_name %> <%= doctor.last_name %>, <%= doctor.title %>
       <%= link_to "Learn more", doctor_path(doctor) %>
-  </ul>
-  <% end %>
+    </p>
+    <% end %>
+  </div>
 <% end %>
 
 <% if @doctors.blank? %>
-  <h4>There are no doctors containing the term <%= params[:search] %>.</h4>
-  <h4>Please make sure your spelling is correct and to capitalize proper nouns.</h4>
+  <section class='search-alert'>
+    <h4>There are no doctors containing the term <%= params[:search] %>.</h4>
+    <h4>Please make sure your spelling is correct and to capitalize proper nouns.</h4>
+  </section>
 <% end %>
