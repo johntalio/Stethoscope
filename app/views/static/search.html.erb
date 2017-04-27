@@ -8,20 +8,20 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <div class='top-container'>
-      <section class='site-name'>
+  <body class='static-body'>
+    <div class='static-top-container'>
+      <section class='static-site-name'>
         <%= link_to "Stethoscope", doctors_path %>
       </section>
-      <div class='search-bar'>
+      <div class='static-search-bar'>
         <%= form_tag doctors_path, :method => 'get' do %>
           <span>
             <%= text_field_tag :search, params[:search], placeholder: "Search Doctor or Title" %>
-            <%= submit_tag "Find a Doctor", :name => nil %>
+            <%= submit_tag "Find a Doctor", :name => nil, :id => 'button' %>
           </span>
-          <% end %>
-        </div>
+        <% end %>
       </div>
+    </div>
     <%= yield %>
   </body>
 </html>
