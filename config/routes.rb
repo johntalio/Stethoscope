@@ -3,4 +3,12 @@ Rails.application.routes.draw do
   root 'static#search'
   get '/doctors' => 'doctors#index'
   get '/doctors/:id' => 'doctors#show', as: 'doctor'
+
+  get '/users' => 'users#new'
+  post '/users' => 'users#create', as: 'users'
+  get '/users/:id' => 'users#show', as: 'user'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create', as: 'logins'
+  delete '/logout'=> 'sessions#destroy'
 end
