@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/doctors' => 'doctors#index'
   get '/doctors/:id' => 'doctors#show', as: 'doctor'
 
-  get '/users' => 'users#new'
+  get '/users/new' => 'users#new'
   post '/users' => 'users#create', as: 'users'
   get '/users/:id' => 'users#show', as: 'user'
 
