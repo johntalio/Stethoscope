@@ -6,6 +6,7 @@ class CreateDoctors < ActiveRecord::Migration[5.0]
       t.string :last_name, null: false
       t.string :title, null: false
       t.string :bio
+      t.integer :user_id
 
       t.timestamps
     end
