@@ -14,9 +14,17 @@ body.static-body {
   padding-top: 150px;
 }
 
+.static-site-login {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
 .static-search-bar {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 25px;
 }
 
 input#search {
@@ -25,7 +33,7 @@ input#search {
 
 input#button {
   position: absolute;
-  top: 40%;
+  top: 44%;
   left: 46%;
   width: 100px;
 }
