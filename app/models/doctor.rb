@@ -1,4 +1,6 @@
 class Doctor < ApplicationRecord
+  belongs_to :user
+
   validates :first_name, :last_name, :title, presence: true
 
   ny_doctors_hash = HTTParty.get "https://api.betterdoctor.com/2016-03-01/doctors?location=NY&user_location=40.7128%2C74.0059&skip=0&limit=10&user_key=9b916adf7c966d9dce5bb16db9f4b2b2"
