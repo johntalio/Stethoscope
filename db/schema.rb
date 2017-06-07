@@ -17,10 +17,11 @@ ActiveRecord::Schema.define(version: 20170606142338) do
 
   create_table "doctors", force: :cascade do |t|
     t.string   "image_url"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "title"
+    t.string   "first_name", null: false
+    t.string   "last_name",  null: false
+    t.string   "title",      null: false
     t.string   "bio"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
