@@ -13,6 +13,18 @@
       <section class='site-name'>
         <%= link_to "Stethoscope", root_path %>
       </section>
+      <% if logged_in? %>
+        <section class='site-auth'>
+          <%= link_to "Log out", logout_path, method: "delete" %>
+        </section>
+        <section class='site-user'>
+          <%= link_to "Profile", user_path(@current_user) %>
+        </section>
+      <% else %>
+        <section class='site-auth'>
+          <%= link_to "Log in", login_path %>
+        </section>
+      <% end %>
       <div class='search-bar'>
         <%= form_tag doctors_path, :method => 'get' do %>
           <span>

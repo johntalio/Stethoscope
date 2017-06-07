@@ -11,7 +11,7 @@
 
 <% if @doctors.blank? %>
   <section class='search-alert'>
-    <h4>There are no doctors containing the term <%= params[:search] %>.</h4>
+    <h4>There are no doctors containing the term '<%= params[:search] %>'.</h4>
     <h4>Please make sure your spelling is correct and to capitalize proper nouns.</h4>
   </section>
 <% end %>
