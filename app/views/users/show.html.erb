@@ -1,1 +1,11 @@
 <h2>Hello, <%= @user.first_name %>.</h2>
+
+<ul>
+  <% if @user.doctors.empty? %>
+    <p>You have not saved a doctor's profile.</p>
+  <% else %>
+    <% @user.doctors.each do |doctor| %>
+      <li><%= doctor.first_name %> <%= doctor.last_name %>, <%= doctor.title %></li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,5 +1,6 @@
 class Doctor < ApplicationRecord
-  belongs_to :user
+  has_many :records
+  has_many :users, :through => :records
 
   validates :first_name, :last_name, :title, presence: true
 

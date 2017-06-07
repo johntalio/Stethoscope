@@ -6,3 +6,7 @@
 <% else %>
   <p><%= @doctor.bio %></p>
 <% end %>
+
+<% if logged_in? %>
+  <%= button_tag "Save doctor's profile", disabled: true %>
+<% end %>
