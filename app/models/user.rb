@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :doctors
+  has_many :records
+  has_many :doctors, :through => :records
 
   validates :first_name, :last_name, :email, :password, presence: true
   validates :email, uniqueness: true
