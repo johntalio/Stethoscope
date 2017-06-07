@@ -14,14 +14,14 @@
         <%= link_to "Stethoscope", doctors_path %>
       </section>
       <% if logged_in? %>
-        <section class='static-site-logout'>
+        <section class='static-site-auth'>
           <%= link_to "Log out", logout_path, method: "delete" %>
         </section>
         <section class='static-site-user'>
           <%= link_to "Profile", user_path(@current_user) %>
         </section>
       <% else %>
-        <section class='static-site-login'>
+        <section class='static-site-auth'>
           <%= link_to "Log in", login_path %>
         </section>
       <% end %>
