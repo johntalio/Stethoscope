@@ -4,7 +4,7 @@
   <%= content_tag(:div, class: "alert alert-#{key}") do %>
     <%= value %>
   <% end %>
-<% end %>
+<% end %><br>
 
 <%= form_for :session, url: login_path do |f| %>
   <%= f.label :email %>:<br>
@@ -13,5 +13,5 @@
   <%= f.label :password %>:<br>
   <%= f.password_field :password %><br><br>
 
-  <%= f.submit "Enter" %><br><br>
+  <%= f.submit "Enter Site" %><br><br>
 <% end %>

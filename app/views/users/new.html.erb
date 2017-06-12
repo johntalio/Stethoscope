@@ -2,7 +2,7 @@
 
 <%= form_for @user, url: users_path do |f| %>
   <%= render 'user_errors' %>
-  
+
   <%= f.label :first_name %>:<br>
   <%= f.text_field :first_name %><br><br>
 
@@ -15,5 +15,5 @@
   <%= f.label :password %>:<br>
   <%= f.password_field :password %><br><br>
 
-  <%= f.submit "Complete" %><br><br>
+  <%= f.submit "Complete Sign Up" %><br><br>
 <% end %>
