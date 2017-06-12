@@ -8,10 +8,15 @@ class RecordsController < ApplicationController
     @record = Record.new(user_id: current_user.id, doctor_id: @doctor.id)
     if @record.save
       flash.now[:notice] = "Save successful."
-      redirect_to @doctor
+      render 'new'
     else
       flash.now[:danger] = "Doctor could not be saved to profile."
-      redirect_to @doctor
+      render 'new'
     end
+  end
+
+  def destroy
+    @doctor = Doctor.find(params[:doctor_id])
+    current_user.doctors.delete(@doctor)
   end
 end
