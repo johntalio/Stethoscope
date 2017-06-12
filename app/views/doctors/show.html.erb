@@ -8,5 +8,5 @@
 <% end %>
 
 <% if logged_in? %>
-  <%= button_tag "Save doctor's profile", disabled: true %>
+  <%= button_to "Save doctor's profile", {:controller => "records", :action => "create", :doctor_id => @doctor.id, :user_id=> session[:user_id]} , :method=>:post  %>
 <% end %>
