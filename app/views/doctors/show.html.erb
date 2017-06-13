@@ -10,5 +10,5 @@
 <% if logged_in? && current_user.doctors.include?(@doctor) %>
   <%= button_to "Remove Doctor from Profile", {:controller => "records", :action => "destroy", :doctor_id => @doctor.id, :user_id => session[:user_id]}, :method => :delete %>
 <% elsif logged_in? %>
-  <%= button_to "Save Doctor's Profile", {:controller => "records", :action => "create", :doctor_id => @doctor.id, :user_id => session[:user_id]}, :method => :post  %>
+  <%= button_to "Save Doctor to Profile", {:controller => "records", :action => "create", :doctor_id => @doctor.id, :user_id => session[:user_id]}, :method => :post  %>
 <% end %>
