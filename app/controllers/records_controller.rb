@@ -17,6 +17,9 @@ class RecordsController < ApplicationController
 
   def destroy
     @doctor = Doctor.find(params[:doctor_id])
-    current_user.doctors.delete(@doctor)
+    if current_user.doctors.delete(@doctor)
+      flash.now[:notice] = "Doctor removed."
+      render 'destroy'
+    end
   end
 end
