@@ -1,12 +1,13 @@
 <h2>Hello, <%= @user.first_name %>.</h2>
 
 <% if @user.doctors.empty? %>
-  <p>You have not saved a doctor's profile.</p>
+  <p>You have not saved any doctors to your profile.</p>
+  <%= link_to "Get Started", doctors_path %>
 <% else %>
+  <p>You have saved the following doctors:</p>
   <% @user.doctors.each do |doctor| %>
-    <ul>
-      <li><%= doctor.first_name %> <%= doctor.last_name %>, <%= doctor.title %></li>
-      <%= button_to "Remove Doctor", {:controller => "records", :action => "destroy", :doctor_id => @doctor.id :user_id => session[:user_id]}, :method => :delete %>
-    </ul>
+  <ul>
+    <li><%= link_to "#{doctor.first_name} " + "#{doctor.last_name}, " + "#{doctor.title}", doctor_path(doctor) %></li>
+  </ul>
   <% end %>
 <% end %>
