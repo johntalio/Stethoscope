@@ -1,11 +1,20 @@
+<h3>Doctor Profile</h3>
 <p><%= image_tag @doctor.image_url %></p>
-<p><%= @doctor.first_name %> <%= @doctor.last_name %></p>
-<p><%= @doctor.title %></p>
+<p><%= @doctor.first_name %> <%= @doctor.last_name %>, <%= @doctor.title %></p>
 <% if @doctor.bio.empty? %>
   <p> This doctor did not provide a bio. </p>
 <% else %>
   <p><%= @doctor.bio %></p>
 <% end %>
+
+<h3>Practice Address</h3>
+<p><%= @doctor.street %></p>
+<p><%= @doctor.city %>, <%= @doctor.state %>, <%= @doctor.zip %></p>
+
+<h3>Practice Details</h3>
+<p><%= @doctor.specialty %></p>
+<p><%= @doctor.specialty_info %></p>
+<p><%= @doctor.phone_type %>: <%= @doctor.phone_num %></p>
 
 <% if logged_in? && current_user.doctors.include?(@doctor) %>
   <%= button_to "Remove Doctor from Profile", {:controller => "records", :action => "destroy", :doctor_id => @doctor.id, :user_id => session[:user_id]}, :method => :delete %>
