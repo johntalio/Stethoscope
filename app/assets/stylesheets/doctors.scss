@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+body.core-body {
   font-family: "Courier New", Courier, monospace;
   background-color: lightblue;
 }
@@ -11,6 +11,7 @@ body {
   display: inline;
   font-weight: bolder;
   font-size: 3em;
+  text-decoration: none;
 }
 
 .site-auth {
@@ -38,6 +39,7 @@ body {
 
 .doc-list {
   padding-top: 30px;
+  padding-bottom: 30px;
   width: 50%;
 }
 
