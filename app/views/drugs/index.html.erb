@@ -8,34 +8,34 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body class='core-body'>
+  <body class='drug-body'>
     <div class='top-container'>
-      <section class='site-name'>
+      <section class='drug-site-name'>
         <%= link_to "Stethoscope", root_path %>
       </section>
       <% if logged_in? %>
-        <section class='site-auth'>
+        <section class='drug-site-auth'>
           <%= link_to "Log out", logout_path, method: "delete" %>
         </section>
-        <section class='site-user'>
+        <section class='drug-site-user'>
           <%= link_to "Profile", user_path(@current_user) %>
         </section>
       <% else %>
-        <section class='site-auth'>
+        <section class='drug-site-auth'>
           <%= link_to "Log in", login_path %>
         </section>
-        <section class='site-user'>
+        <section class='drug-site-user'>
           <%= link_to "Sign up", users_new_path %>
         </section>
-        <section class='to-drug'>
-          <%= link_to "Drugs", drugs_path %>
+        <section class='drug-to-doc'>
+          <%= link_to "Doctors", root_path %>
         </section>
       <% end %>
-      <div class='search-bar'>
-        <%= form_tag doctors_path, :method => 'get' do %>
+      <div class='drug-search-bar'>
+        <%= form_tag drugs_path, :method => 'get' do %>
           <span>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Doctor or Title" %>
-            <%= submit_tag "Find a Doctor", :name => nil %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Drug" %>
+            <%= submit_tag "Find a Drug", :name => nil, :id => 'button' %>
           </span>
         <% end %>
       </div>

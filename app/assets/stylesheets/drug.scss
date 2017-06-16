@@ -1,20 +1,36 @@
-// Place all the styles related to the Doctors controller here.
+// Place all the styles related to the drug controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body.core-body {
+body.drug-body {
   font-family: "Courier New", Courier, monospace;
   background-color: lightblue;
 }
 
-.site-name {
-  display: inline;
+.drug-site-name {
   font-weight: bolder;
   font-size: 3em;
-  text-decoration: none;
+  text-align: center;
+  padding-top: 150px;
 }
 
-.site-auth {
+.drug-site-auth {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.drug-site-user {
+  position: absolute;
+  top: 10px;
+  left: 120px;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.drug-to-drug {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -22,40 +38,15 @@ body.core-body {
   font-size: 1.2em;
 }
 
-.site-user {
+.drug-to-doc {
   position: absolute;
   top: 10px;
-  right: 120px;
+  right: 20px;
   font-weight: bolder;
   font-size: 1.2em;
 }
 
-.to-drug {
-  position: absolute;
-  top: 10px;
-  right: 240px;
-  font-weight: bolder;
-  font-size: 1.2em;
-}
-
-.search-bar {
-  display: inline;
-  position: absolute;
-  padding-top: 25px;
-  padding-left: 20px;
-}
-
-.doc-list {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  width: 50%;
-}
-
-.each-doc {
-  padding-left: 30px;
-}
-
-.search-alert {
+.drug-search-bar {
   text-align: center;
-  font-weight: bolder;
+  padding-top: 25px;
 }
