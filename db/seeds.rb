@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 User.delete_all
 
 10.times do
@@ -34,4 +35,9 @@ ma_doctors_hash["data"].each do |doctor|
   Doctor.find_or_create_by(image_url: doctor["profile"]["image_url"], first_name: doctor["profile"]["first_name"], last_name: doctor["profile"]["last_name"], title: doctor["profile"]["title"], bio: doctor["profile"]["bio"], city: doctor["practices"][0]["visit_address"]["city"],
   state: doctor["practices"][0]["visit_address"]["state"], street: doctor["practices"][0]["visit_address"]["street"], zip: doctor["practices"][0]["visit_address"]["zip"], specialty: doctor["specialties"][0]["name"],
   specialty_info: doctor["specialties"][0]["description"], phone_num: doctor["practices"][0]["phones"][0]["number"], phone_type: doctor["practices"][0]["phones"][0]["type"])
+end
+
+drug_hash = HTTParty.get "https://api.fda.gov/drug/label.json?api_key=29LJVB7GycrNlnXqibGZNcmVcUiqiw0furN3mKYh&search=effective_time:[20090601+TO+20170616]+AND+tylenol"
+drug_hash["results"][0].each do |drug|
+  Drug.find_or_create_by(generic_name: drug["generic_name"][0], brand_name: drug["brand_name"][0])
 end
