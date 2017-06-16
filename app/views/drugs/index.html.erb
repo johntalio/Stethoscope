@@ -1,45 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Stethoscope</title>
-    <%= csrf_meta_tags %>
+<% if !@drugs.blank? %>
+  <div class='drug-list'>
+    <% @drugs.each do |drug| %>
+      <p class='each-drug'>
+        <%= drug.generic_name %>, <%= drug.brand_name %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
-
-  <body class='drug-body'>
-    <div class='top-container'>
-      <section class='drug-site-name'>
-        <%= link_to "Stethoscope", root_path %>
-      </section>
-      <% if logged_in? %>
-        <section class='drug-site-auth'>
-          <%= link_to "Log out", logout_path, method: "delete" %>
-        </section>
-        <section class='drug-site-user'>
-          <%= link_to "Profile", user_path(@current_user) %>
-        </section>
-      <% else %>
-        <section class='drug-site-auth'>
-          <%= link_to "Log in", login_path %>
-        </section>
-        <section class='drug-site-user'>
-          <%= link_to "Sign up", users_new_path %>
-        </section>
-        <section class='drug-to-doc'>
-          <%= link_to "Doctors", root_path %>
-        </section>
-      <% end %>
-      <div class='drug-search-bar'>
-        <%= form_tag drugs_path, :method => 'get' do %>
-          <span>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Drug" %>
-            <%= submit_tag "Find a Drug", :name => nil, :id => 'button' %>
-          </span>
-        <% end %>
-      </div>
-    </div>
-    <%= yield %>
-  </body>
-</html>
+<% if @drugs.blank %>
+  <section class='search-alert'>
+    <h4>There are no drugs containing the term '<%= params[:search] %>'.</h4>
+    <h4>Please make sure your spelling is correct and to capitalize proper nouns.</h4>
+  </section>
+<% end %>
