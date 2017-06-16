@@ -38,6 +38,6 @@ ma_doctors_hash["data"].each do |doctor|
 end
 
 drug_hash = HTTParty.get "https://api.fda.gov/drug/label.json?api_key=29LJVB7GycrNlnXqibGZNcmVcUiqiw0furN3mKYh&search=effective_time:[20090601+TO+20170616]+AND+tylenol"
-drug_hash["results"][0].each do |drug|
-  Drug.find_or_create_by(generic_name: drug["generic_name"][0], brand_name: drug["brand_name"][0])
+drug_hash["results"].each do |drug|
+  Drug.find_or_create_by(generic_name: drug["openfda"]["generic_name"][0], brand_name: drug["openfda"]["brand_name"][0])
 end
