@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20170616170042) do
     t.string   "last_name",      null: false
     t.string   "title",          null: false
     t.string   "bio"
-    t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "city"
@@ -35,6 +34,8 @@ ActiveRecord::Schema.define(version: 20170616170042) do
   end
 
   create_table "drugs", force: :cascade do |t|
+    t.string   "generic_name",                null: false
+    t.string   "brand_name",                  null: false
     t.string   "purpose"
     t.string   "warnings"
     t.string   "dosage_and_administration"

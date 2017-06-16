@@ -1,9 +1,9 @@
 <% if !@doctors.blank? %>
   <div class='doc-list'>
     <% @doctors.each do |doctor| %>
-    <p class='each-doc'>
-      <%= link_to "#{doctor.first_name} " + "#{doctor.last_name}, " + "#{doctor.title}", doctor_path(doctor) %>
-    </p>
+      <p class='each-doc'>
+        <%= link_to "#{doctor.first_name} " + "#{doctor.last_name}, " + "#{doctor.title}", doctor_path(doctor) %>
+      </p>
     <% end %>
   </div>
 <% end %>
