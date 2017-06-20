@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   post '/records' => 'records#create', as: 'records'
   delete '/records/:id' => 'records#destroy'
 
-  get '/drugs/drugs_search' => 'drugs#drugs_search', as: 'drugs_search'
+  get '/drug_searches/search' => 'drug_searches#search', as: 'search'
   get '/drugs/index' => 'drugs#index'
 end

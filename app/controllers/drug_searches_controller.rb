@@ -1,9 +1,7 @@
-class DrugsController < ApplicationController
-  def show
-    @drug = Drug.find(params[:id])
-  end
+class DrugSearchesController < ApplicationController
+  layout false
 
-  def index
+  def search
     @drugs = Drug.all
     if params[:search]
       @drugs = Drug.search(params[:search]).order("created_at DESC")

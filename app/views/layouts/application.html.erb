@@ -21,7 +21,10 @@
           <%= link_to "Profile", user_path(@current_user) %>
         </section>
         <section class='to-drug'>
-          <%= link_to "Drugs", drugs_search_path %>
+          <%= link_to "Drugs", search_path %>
+        </section>
+        <section class='to-doc'>
+          <%= link_to "Doctors", root_path %>
         </section>
       <% else %>
         <section class='site-auth'>
@@ -31,7 +34,10 @@
           <%= link_to "Sign up", users_new_path %>
         </section>
         <section class='to-drug'>
-          <%= link_to "Drugs", drugs_search_path %>
+          <%= link_to "Drugs", search_path %>
+        </section>
+        <section class='to-doc'>
+          <%= link_to "Doctors", root_path %>
         </section>
       <% end %>
       <div class='search-bar'>
