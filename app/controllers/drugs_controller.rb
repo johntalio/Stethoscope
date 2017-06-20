@@ -1,5 +1,7 @@
 class DrugsController < ApplicationController
-  layout false
+  def show
+    @drug = Drug.find(params[:id])
+  end
 
   def index
     @drugs = Drug.all
@@ -8,8 +10,5 @@ class DrugsController < ApplicationController
     else
       @drugs = Drug.all.order("created_at DESC")
     end
-  end
-
-  def drugs_search
   end
 end
