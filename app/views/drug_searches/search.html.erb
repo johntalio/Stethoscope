@@ -38,7 +38,7 @@
         <%= form_tag drugs_index_path, :method => 'get' do %>
           <span>
             <%= text_field_tag :search, params[:search], placeholder: "Search Drug" %>
-            <%= submit_tag "Find a Drug", :name => nil, :id => 'button' %>
+            <%= submit_tag "Find a Drug", :name => nil, :id => 'drug-button' %>
           </span>
         <% end %>
       </div>
