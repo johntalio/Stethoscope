@@ -1,0 +1,16 @@
+<% content_for :search_style do %>
+  .search-bar {display: none}
+  #layout-search {display: inline; position: absolute; padding-top: 25px; padding-left: 20px;}
+  .each-drug {padding-left: 0;}
+<% end %>
+
+<% content_for :layout_search do %>
+  <%= form_tag drugs_index_path, :method => 'get' do %>
+    <span>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Drug" %>
+      <%= submit_tag "Find a Drug", :name => nil %>
+    </span>
+    <%= content_for?(:drugs_layout_search) ? yield(:drugs_layout_search) : yield %>
+  <% end %>
+<% end %>
+<%= render template: "layouts/application" %>
