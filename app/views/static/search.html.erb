@@ -13,6 +13,9 @@
       <section class='static-site-name'>
         <%= link_to "Stethoscope", doctors_path %>
       </section>
+      <section class='static-to-drug'>
+        <%= link_to "Drugs", search_path %>
+      </section>
       <% if logged_in? %>
         <section class='static-site-auth'>
           <%= link_to "Log out", logout_path, method: "delete" %>
@@ -20,18 +23,12 @@
         <section class='static-site-user'>
           <%= link_to "Profile", user_path(@current_user) %>
         </section>
-        <section class='static-to-drug'>
-          <%= link_to "Drugs", search_path %>
-        </section>
       <% else %>
         <section class='static-site-auth'>
           <%= link_to "Log in", login_path %>
         </section>
         <section class='static-site-user'>
           <%= link_to "Sign up", users_new_path %>
-        </section>
-        <section class='static-to-drug'>
-          <%= link_to "Drugs", search_path %>
         </section>
       <% end %>
       <div class='static-search-bar'>
