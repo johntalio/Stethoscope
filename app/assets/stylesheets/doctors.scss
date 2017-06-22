@@ -14,34 +14,10 @@ body.core-body {
   text-decoration: none;
 }
 
-.site-auth {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-weight: bolder;
-  font-size: 1.2em;
-}
-
 .site-user {
   position: absolute;
   top: 10px;
   right: 120px;
-  font-weight: bolder;
-  font-size: 1.2em;
-}
-
-.to-drug {
-  position: absolute;
-  top: 10px;
-  right: 240px;
-  font-weight: bolder;
-  font-size: 1.2em;
-}
-
-.to-doc {
-  position: absolute;
-  top: 10px;
-  right: 330px;
   font-weight: bolder;
   font-size: 1.2em;
 }
@@ -66,4 +42,47 @@ body.core-body {
 .search-alert {
   text-align: center;
   font-weight: bolder;
+}
+
+.drop-button {
+  background-color: blue;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 10px;
+  right: 200px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .drop-button {
+    background-color: orange;
 }
