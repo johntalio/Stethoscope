@@ -2,7 +2,7 @@
   <div class='drug-list'>
     <% @drugs.each do |drug| %>
       <p class='each-drug'>
-        <%= drug.generic_name %>, <%= drug.brand_name %>
+        <%= link_to "#{drug.generic_name}, " + "#{drug.brand_name}", drug_path(drug) %>
       </p>
     <% end %>
   </div>
