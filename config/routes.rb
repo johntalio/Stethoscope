@@ -18,4 +18,9 @@ Rails.application.routes.draw do
 
   get '/drug_searches/search' => 'drug_searches#search', as: 'search'
   get '/drugs/index' => 'drugs#index'
+  get '/drugs/:id' => 'drugs#show', as: 'drug'
+
+  get '/prescriptions/new' => 'prescriptions#new'
+  post '/prescriptions' => 'prescriptions#create', as: 'prescriptions'
+  delete '/prescriptions/:id' => 'prescriptions#destroy'
 end
