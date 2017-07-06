@@ -11,3 +11,15 @@
   </ul>
   <% end %>
 <% end %>
+
+<% if @user.drugs.empty? %>
+  <p>You have not saved any drugs to your profile.</p>
+  <%= link_to "Get Started", drugs_index_path %>
+<% else %>
+  <p>You have saved the following drugs:</p>
+  <% @user.drugs.each do |drug| %>
+  <ul>
+    <li><%= link_to "#{drug.generic_name} " + "#{drug.brand_name}", drug_path(drug) %></li>
+  </ul>
+  <% end %>
+<% end %>
