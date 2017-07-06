@@ -1,0 +1,11 @@
+<%= link_to "Return", drugs_index_path %>
+
+<h3>Drug Profile</h3>
+<p><%= @drug.generic_name %></p>
+<p><%= @drug.brand_name %></p>
+
+<% if logged_in? && current_user.drugs.include?(@drug) %>
+  <%= button_to "Remove Drug from Profile", {:controller => "prescriptions", :action => "destroy", :drug_id => @drug.id, :user_id => session[:user_id]}, :method => :delete %>
+<% elsif logged_in? %>
+  <%= button_to "Save Drug to Profile", {:controller => "prescriptions", :action => "create", :drug_id => @drug.id, :user_id => session[:user_id]}, :method => :post  %>
+<% end %>
